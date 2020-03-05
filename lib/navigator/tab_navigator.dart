@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_app/pages/home_page.dart';
-import 'package:my_flutter_app/pages/my_page.dart';
 import 'package:my_flutter_app/pages/search_page.dart';
 import 'package:my_flutter_app/pages/travel_page.dart';
 class TabNavigator extends StatefulWidget {
@@ -23,7 +22,6 @@ class _TabNavigatorState extends State<TabNavigator> {
         controller: _controller,
         children: <Widget>[
           HomePage(),
-          MyPage(),
           SearchPage(),
           TravelPage()
         ],
