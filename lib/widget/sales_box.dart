@@ -4,10 +4,10 @@ import 'package:my_flutter_app/model/sales_box_model.dart';
 import 'package:my_flutter_app/widget/webview.dart';
 import 'package:path/path.dart';
 
-class SalesNav extends StatelessWidget {
+class SalesBox extends StatelessWidget {
   final SalesBoxModel salesBox;
 
-  const SalesNav({Key key, @required this.salesBox}) : super(key: key);
+  const SalesBox({Key key, @required this.salesBox}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
