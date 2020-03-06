@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:my_flutter_app/dao/home_dao.dart';
 import 'package:my_flutter_app/model/common_model.dart';
+import 'package:my_flutter_app/model/grid_nav_model.dart';
 import 'package:my_flutter_app/model/home_model.dart';
 import 'package:my_flutter_app/widget/grid_nav.dart';
 import 'package:my_flutter_app/widget/local_nav.dart';
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> {
   double appBarAlpha = 0;
   String resultString = '';
   List<CommonModel> localNavList = [];
+  GridNavModel gridNavModel;
 
 
   @override
@@ -46,6 +48,7 @@ class _HomePageState extends State<HomePage> {
       HomeModel model = await HomeDao.fetch();
       setState(() {
         localNavList = model.localNavList;
+        gridNavModel = model.gridNav;
       });
     } catch (e) {
       print(e);
@@ -84,11 +87,13 @@ class _HomePageState extends State<HomePage> {
                         pagination: SwiperPagination(),
                       ),
                     ),
-//                    GridNav(gridNavModel: null, name: 'xiaoming'),
                     Padding(
                       padding: EdgeInsets.fromLTRB(7, 4, 7, 4),
                       child: LocalNav(localNavList: localNavList),
                     ),
+                    Padding(
+                        padding: EdgeInsets.fromLTRB(7, 0, 7, 4),
+                        child: GridNav(gridNavModel: gridNavModel)),
                     Container(
                       height: 800,
                       child: ListTile(
