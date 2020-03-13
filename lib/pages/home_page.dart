@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
 //      });
 //    });
     try {
-      HomeModel model = await HomeDao.fetch();
+      TravelModel model = await HomeDao.fetch();
       setState(() {
         localNavList = model.localNavList;
         gridNavModel = model.gridNav;
